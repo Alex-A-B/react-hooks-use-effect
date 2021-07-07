@@ -11,16 +11,16 @@ function DogPics() {
       .then((r) => r.json())
       .then((data) => {
         console.log("setState");
-        setImages(data.messages);
+        setImages(data.message);
       });
-  });
+  }, []);
 
   console.log("render");
 
   return (
     <div>
       {images.map((image) => (
-        <img src={image} key={image} />
+        <img src={image} key={image} alt="doggo" />
       ))}
     </div>
   );
